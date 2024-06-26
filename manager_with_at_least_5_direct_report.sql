@@ -1,0 +1,8 @@
+/* 
+leetcode question: https://leetcode.com/problems/managers-with-at-least-5-direct-reports/
+Write your MySQL query statement below
+ */
+select name 
+from Employee 
+where id IN 
+(select managerId from Employee group by managerId having count(*) >= 5)
